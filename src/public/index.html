@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>SC2 Api Emulator</title>
+		<link rel="stylesheet" type="text/css" href="api.css">
+	</head>
+
+	<body>
+	  <h3>SC2 Api Emulator</h3>
+	  <div>The api is available at: <span class="ui-url"></span> and <span class="game-url"></span></div>
+	  <form>
+		<div class="panel">
+			<h4>State:</h4>
+			<div class="row">
+				<label><input type="radio" name="state" value="nogame" checked="checked" />Menus before a game has been played</label>
+				<label><input type="radio" name="state" value="postgame" />Menus after a game has been played</label>
+				<label><input type="radio" name="state" value="loading" />Loading screen</label>  
+				<label><input type="radio" name="state" value="ingame" />In game</label>  
+				<label><input type="checkbox" name="replay" value="true" />Replay</label>  
+			</div>
+		</div>
+		<div class="panel">
+			<h4>Main Menu:</h4>
+			<div class="row">
+				<label><input type="radio" name="menu_state" value="ScreenHome/ScreenHome"  checked="checked" />ScreenHome</label>
+				<label><input type="radio" name="menu_state" value="ScreenSingle/ScreenSingle" />ScreenSingle</label>
+				<label><input type="radio" name="menu_state" value="ScreenCollection/ScreenCollection" />ScreenCollection</label>  
+				<label><input type="radio" name="menu_state" value="ScreenCoopCampaign/ScreenCoopCampaign" />ScreenCoopCampaign</label>
+				<label><input type="radio" name="menu_state" value="ScreenCustom/ScreenCustom" />ScreenCustom</label>
+				<label><input type="radio" name="menu_state" value="ScreenReplay/ScreenReplay" />ScreenReplay</label>  
+				<label><input type="radio" name="menu_state" value="ScreenMultiplayer/ScreenMultiplayer" />ScreenMultiplayer</label>
+			</div>
+		</div>
+		<div class="panel">
+			<h4>Additional Menu:</h4>
+			<div class="row">
+				<label><input type="radio" name="additional_menu_state" value="None" checked="checked" />None</label>
+				<label><input type="radio" name="additional_menu_state" value="ScreenScore/ScreenScore" />ScreenScore</label>
+				<label><input type="radio" name="additional_menu_state" value="ScreenUserProfile/ScreenUserProfile" />ScreenUserProfile</label>
+				<label><input type="radio" name="additional_menu_state" value="ScreenBattleLobby/ScreenBattleLobby" />ScreenBattleLobby</label>
+			</div>
+		</div>
+		<div class="panel">
+			<h4>Players:</h4>
+			<div>
+				 <div class="player-row">
+					player 1
+					<div class="enabled-div"><input type="checkbox" name="enabled1" value="true" checked="checked" /> Enabled</div>
+					<div>
+						<input type="text" placeholder="Player Name" name="name1" value="player1" />
+					</div>
+					<div class="race-div">
+						<input type="radio" name="race1" value="Terr" checked="checked" /> Terr
+						<input type="radio" name="race1" value="Prot" /> Prot
+						<input type="radio" name="race1" value="Zerg" /> Zerg
+						<input type="radio" name="race1" value="random" /> random
+
+					</div>
+					<div>
+						<input type="radio" name="result1" value="Victory" checked="checked" /> Victory
+						<input type="radio" name="result1" value="Defeat" /> Defeat
+					</div>
+				</div>
+				<div class="player-row">
+					player 2
+					<div class="enabled-div"><input type="checkbox" name="enabled2" value="true" checked="checked" /> Enabled</div>
+					<div>
+						<input type="text" placeholder="Player Name" name="name2" value="player2" />
+					</div>
+					<div class="race-div">
+						<input type="radio" name="race2" value="Terr"  checked="checked" /> Terr
+						<input type="radio" name="race2" value="Prot" /> Prot
+						<input type="radio" name="race2" value="Zerg" checked="checked" /> Zerg
+						<input type="radio" name="race2" value="random" /> random
+
+					</div>
+					<div>
+						<input type="radio" name="result2" value="Victory" /> Victory
+						<input type="radio" name="result2" value="Defeat" checked="checked" /> Defeat
+					</div>
+				</div>
+				<div class="player-row">
+					player 3
+					<div class="enabled-div"><input type="checkbox" name="enabled3" value="true" /> Enabled</div>
+					<div>
+						<input type="text" placeholder="Player Name" name="name3" value="player3" />
+					</div>
+					<div class="race-div">
+						<input type="radio" name="race3" value="Terr" checked="checked"  /> Terr
+						<input type="radio" name="race3" value="Prot" /> Prot
+						<input type="radio" name="race3" value="Zerg" /> Zerg
+						<input type="radio" name="race3" value="random" /> random
+
+					</div>
+					<div>
+						<input type="radio" name="result3" value="Victory" /> Victory
+						<input type="radio" name="result3" value="Defeat"  checked="checked" /> Defeat
+					</div>
+				</div>  
+				<div class="player-row">
+					player 4
+					<div class="enabled-div"><input type="checkbox" name="enabled4" value="true" /> Enabled</div>
+					<div>
+						<input type="text" placeholder="Player Name" name="name4" value="player4" />
+					</div>
+					<div class="race-div">
+						<input type="radio" name="race4" value="Terr"  checked="checked" /> Terr
+						<input type="radio" name="race4" value="Prot" /> Prot
+						<input type="radio" name="race4" value="Zerg" /> Zerg
+						<input type="radio" name="race4" value="random" /> random
+
+					</div>
+					<div>
+						<input type="radio" name="result4" value="Victory"  checked="checked" /> Victory
+						<input type="radio" name="result4" value="Defeat" /> Defeat
+					</div>
+				</div>
+				<div class="player-row">
+					player 5
+					<div class="enabled-div"><input type="checkbox" name="enabled5" value="true" /> Enabled</div>
+					<div>
+						<input type="text" placeholder="Player Name" name="name5" value="player5" />
+					</div>
+					<div class="race-div">
+						<input type="radio" name="race5" value="Terr"  checked="checked" /> Terr
+						<input type="radio" name="race5" value="Prot" /> Prot
+						<input type="radio" name="race5" value="Zerg" /> Zerg
+						<input type="radio" name="race5" value="random" /> random
+
+					</div>
+					<div>
+						<input type="radio" name="result5" value="Victory" /> Victory
+						<input type="radio" name="result5" value="Defeat"  checked="checked" /> Defeat
+					</div>
+				</div>
+				<div class="player-row">
+					player 6
+					<div class="enabled-div"><input type="checkbox" name="enabled6" value="true" /> Enabled</div>
+					<div>
+						<input type="text" placeholder="Player Name" name="name6" value="player6" />
+					</div>
+					<div class="race-div">
+						<input type="radio" name="race6" value="Terr"  checked="checked" /> Terr
+						<input type="radio" name="race6" value="Prot" /> Prot
+						<input type="radio" name="race6" value="Zerg" /> Zerg
+						<input type="radio" name="race6" value="random" /> random
+
+					</div>
+					<div>
+						<input type="radio" name="result6" value="Victory" /> Victory
+						<input type="radio" name="result6" value="Defeat"  checked="checked" /> Defeat
+					</div>
+				</div>  
+				<div class="player-row">
+					player 7
+					<div class="enabled-div"><input type="checkbox" name="enabled7" value="true" /> Enabled</div>
+					<div>
+						<input type="text" placeholder="Player Name" name="name7" value="player7" />
+					</div>
+					<div class="race-div">
+						<input type="radio" name="race7" value="Terr"  checked="checked" /> Terr
+						<input type="radio" name="race7" value="Prot" /> Prot
+						<input type="radio" name="race7" value="Zerg" /> Zerg
+						<input type="radio" name="race7" value="random" /> random
+
+					</div>
+					<div>
+						<input type="radio" name="result7" value="Victory"  checked="checked" /> Victory
+						<input type="radio" name="result7" value="Defeat" /> Defeat
+					</div>
+				</div>
+				<div class="player-row">
+					player 8
+					<div class="enabled-div"><input type="checkbox" name="enabled8" value="true" /> Enabled</div>
+					<div>
+						<input type="text" placeholder="Player Name" name="name8" value="player8" />
+					</div>
+					<div class="race-div">
+						<input type="radio" name="race8" value="Terr"  checked="checked" /> Terr
+						<input type="radio" name="race8" value="Prot" /> Prot
+						<input type="radio" name="race8" value="Zerg" /> Zerg
+						<input type="radio" name="race8" value="random" /> random
+
+					</div>
+					<div>
+						<input type="radio" name="result8" value="Victory" checked="checked"  /> Victory
+						<input type="radio" name="result8" value="Defeat" /> Defeat
+					</div>
+				</div>
+			</div>
+		</div>
+</form>
+	<div class="panel responses">
+		<div class="col">
+			<h4 class="ui-url">/ui</h4>
+			<div class="code" id="ui-response"></div>
+		</div>
+
+		<div class="col">
+			<h4 class="game-url">/game</h4>
+			<div class="code" id="game-response"></div>
+		</div>
+	</div>
+
+
+
+	<script src="jquery-3.4.1.min.js"></script>
+	<script src="api.js"></script>
+	<script>
+		$(function() {
+			$('.ui-url').text(window.location.href + "ui");
+			$('.game-url').text(window.location.href + "game");
+		})
+	</script>
+	</body>
+</html>
