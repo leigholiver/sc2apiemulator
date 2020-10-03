@@ -1,0 +1,24 @@
+name: Build-Master
+on:
+  push:
+    branches:
+      - master
+jobs:
+  Build-And-Push:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+        with:
+          ref: ${{ github.ref }}
+
+      - name: Build Image
+        run: |
+          docker build -t leigholiver/sc2apiemulator .
+
+      - name: Login to docker repos
+        run: echo ${{ secrets.dockerhubPassword }} | docker login -u ${{ secrets.dockerhubUsername }} --password-stdin
+
+      - name: Tag and push
+        run: |
+          docker tag leigholiver/sc2apiemulator leigholiver/sc2apiemulator:latest
+          docker push leigholiver/sc2apiemulator:latest
