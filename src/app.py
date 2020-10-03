@@ -17,9 +17,9 @@ def ui():
 
         if data['additional_menu_state'] != "None":
             activeScreens.append(data['additional_menu_state'])
-    
+
         return respond({ 'activeScreens': activeScreens })
-    
+
     if data['state'] == 'loading':
         return respond({'activeScreens': ['ScreenLoading/ScreenLoading']})
 
@@ -47,13 +47,13 @@ def game():
     if data['state'] == "ingame" and state['inGame'] == 0:
         state['inGame'] = 1
         state['players'] = getPlayersFromData(data)
-        state['replay'] = data['replay']
+        state['replay'] = data['replay'] == "true" or data['replay'] == "rewind"
         conn.set("state", json.dumps(state))
-    
+
     tmpPlayers = []
     for i in range(0,len(state['players'])):
         p = state['players'][i].copy()
-        if data['state'] == "ingame":
+        if data['state'] == "ingame" and data['replay'] == "false":
             p['result'] = "Undecided"
         else:
             p['result'] = data['result'+str(p['id'])]
