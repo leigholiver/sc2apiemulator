@@ -43,3 +43,7 @@ label {
 .code {
 	font-family: "Courier New", Courier, monospace;
 }
+
+.spacer {
+	width: 2rem;
+}

@@ -18,9 +18,12 @@
 			<div class="row">
 				<label><input type="radio" name="state" value="nogame" checked="checked" />Menus before a game has been played</label>
 				<label><input type="radio" name="state" value="postgame" />Menus after a game has been played</label>
-				<label><input type="radio" name="state" value="loading" />Loading screen</label>  
-				<label><input type="radio" name="state" value="ingame" />In game</label>  
-				<label><input type="checkbox" name="replay" value="true" />Replay</label>  
+				<label><input type="radio" name="state" value="loading" />Loading screen</label>
+				<label><input type="radio" name="state" value="ingame" />In game</label>
+				<div class="spacer"></div>
+				<label><input type="radio" name="replay" value="false" checked="checked" />No Replay</label>
+				<label><input type="radio" name="replay" value="true" />Replay</label>
+				<label><input type="radio" name="replay" value="rewind" />Replay (rewind)</label>
 			</div>
 		</div>
 		<div class="panel">
@@ -28,10 +31,10 @@
 			<div class="row">
 				<label><input type="radio" name="menu_state" value="ScreenHome/ScreenHome"  checked="checked" />ScreenHome</label>
 				<label><input type="radio" name="menu_state" value="ScreenSingle/ScreenSingle" />ScreenSingle</label>
-				<label><input type="radio" name="menu_state" value="ScreenCollection/ScreenCollection" />ScreenCollection</label>  
+				<label><input type="radio" name="menu_state" value="ScreenCollection/ScreenCollection" />ScreenCollection</label>
 				<label><input type="radio" name="menu_state" value="ScreenCoopCampaign/ScreenCoopCampaign" />ScreenCoopCampaign</label>
 				<label><input type="radio" name="menu_state" value="ScreenCustom/ScreenCustom" />ScreenCustom</label>
-				<label><input type="radio" name="menu_state" value="ScreenReplay/ScreenReplay" />ScreenReplay</label>  
+				<label><input type="radio" name="menu_state" value="ScreenReplay/ScreenReplay" />ScreenReplay</label>
 				<label><input type="radio" name="menu_state" value="ScreenMultiplayer/ScreenMultiplayer" />ScreenMultiplayer</label>
 			</div>
 		</div>
@@ -100,7 +103,7 @@
 						<input type="radio" name="result3" value="Victory" /> Victory
 						<input type="radio" name="result3" value="Defeat"  checked="checked" /> Defeat
 					</div>
-				</div>  
+				</div>
 				<div class="player-row">
 					player 4
 					<div class="enabled-div"><input type="checkbox" name="enabled4" value="true" /> Enabled</div>
@@ -154,7 +157,7 @@
 						<input type="radio" name="result6" value="Victory" /> Victory
 						<input type="radio" name="result6" value="Defeat"  checked="checked" /> Defeat
 					</div>
-				</div>  
+				</div>
 				<div class="player-row">
 					player 7
 					<div class="enabled-div"><input type="checkbox" name="enabled7" value="true" /> Enabled</div>
