@@ -44,7 +44,7 @@ def game():
     if data['state'] == "nogame":
         return respond({'isReplay': False, 'displayTime': 0.0, 'players': []})
 
-    state['replay'] = data['replay']
+    state['replay'] = data['replay'] == "true"
     if data['state'] == "ingame" and state['inGame'] == 0:
         state['inGame'] = 1
         state['players'] = getPlayersFromData(data)
