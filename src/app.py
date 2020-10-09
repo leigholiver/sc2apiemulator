@@ -44,10 +44,10 @@ def game():
     if data['state'] == "nogame":
         return respond({'isReplay': False, 'displayTime': 0.0, 'players': []})
 
+    state['replay'] = data['replay']
     if data['state'] == "ingame" and state['inGame'] == 0:
         state['inGame'] = 1
         state['players'] = getPlayersFromData(data)
-        state['replay'] = data['replay'] == "true" or data['replay'] == "rewind"
         conn.set("state", json.dumps(state))
 
     tmpPlayers = []
